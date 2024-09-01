@@ -1,4 +1,43 @@
-:root {
+*{
+  background-color: black;
+  color:white
+}
+/* default styles for mobile-first approach*/
+p {
+  font-size: 1rem;
+ }
+ h1{
+  font-size: 2rem;
+ }
+ h2{
+  font-size: 1.5rem;
+ }
+ /* Styles for desktop */
+ @media (min-width: 1024px) {
+  p {
+  font-size: 1.25rem;
+  }
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+ }
+ /* Styles for tablet screen */
+ @media (min-width: 768px) {
+  p {
+  font-size: 1.125rem;
+  }
+  h1{
+    font-size: 2.5re,;
+  }
+  h2{
+    font-size: 1.75rem;
+  }
+ }
+ 
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +104,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

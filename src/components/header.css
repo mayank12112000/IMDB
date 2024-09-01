@@ -1,0 +1,24 @@
+.header_icon{
+    width: 3rem;
+    padding: 2rem;
+}
+.header{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.header_link{
+    text-decoration: none;
+    color: white;
+    margin-left: 1.5rem;
+}
+.white:hover{
+    color: red;
+}
+.link{
+    text-decoration: none;
+}
+.imbd-icon{
+    padding: 0 0.4rem 0 0.4rem;
+    border: 2px solid yellow;
+    border-radius: 0.25rem;
+}
