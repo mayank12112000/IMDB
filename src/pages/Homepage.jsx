@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "./homepage.css";
+import MovieList from "./MovieList";
 
 export default function Homepage() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -20,8 +21,8 @@ export default function Homepage() {
       <Carousel autoPlay={true} showArrows={true} showThumbs={false} renderIndicator={false} infiniteLoop={true}>
         {popularMovies.map((movie) => (
           <div key={movie.id}>
-            <img
-              loading="lazy"
+            <img 
+              loading="lazy" className="carousel-image"
               src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               alt={movie.original_title}
             />
@@ -29,6 +30,8 @@ export default function Homepage() {
           </div>
         ))}
       </Carousel>
+      <MovieList/>
+
       </>
   );
 }

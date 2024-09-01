@@ -1,0 +1,23 @@
+.movie-card{
+    width:9.5rem;
+    min-height: 12rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+    
+}
+.movie-desc{
+    display: none;
+    z-index: 2000;
+    bottom: 2px;
+}
+.movie-card:hover{
+    filter: brightness(1.4);
+    transform: scale(1.3);
+    cursor: pointer;
+    .movie-desc{
+        display: block;
+        position: absolute;
+        background-color: transparent;
+    }
+}
