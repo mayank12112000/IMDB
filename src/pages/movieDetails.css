@@ -1,3 +1,12 @@
 .movie-detail-picture{
     width: 100%;
 }
+.genre{
+    border-radius: 1rem;
+    padding: 0.3rem;
+    border: 1.5px solid rgb(172, 160, 160);
+}
+.homepage{
+    background-color: red;
+    border-radius: 3rem;
+}
