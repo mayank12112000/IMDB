@@ -16,17 +16,19 @@ export default function Homepage() {
   }, [apiKey]);
 
   return (
-    <Carousel autoPlay={true} showArrows={true} showThumbs={false} renderIndicator={false} infiniteLoop={true}>
-      {popularMovies.map((movie) => (
-        <div key={movie.id}>
-          <img
-            loading="lazy"
-            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            alt={movie.original_title}
-          />
-          <p className="carousel-legend">{movie.original_title}</p>
-        </div>
-      ))}
-    </Carousel>
+    <>
+      <Carousel autoPlay={true} showArrows={true} showThumbs={false} renderIndicator={false} infiniteLoop={true}>
+        {popularMovies.map((movie) => (
+          <div key={movie.id}>
+            <img
+              loading="lazy"
+              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+              alt={movie.original_title}
+            />
+            <p className="carousel-legend">{movie.original_title}</p>
+          </div>
+        ))}
+      </Carousel>
+      </>
   );
 }
