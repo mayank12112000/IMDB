@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 import "./card.css"
 export default function Card({ movie }) {
@@ -11,11 +10,12 @@ export default function Card({ movie }) {
   }, []);
   return (
       <div key={movie.id} className="m-2 movie-card">
+        <i class="fa fa-bookmark fs-5" aria-hidden="true"></i>
         <Link to={`/movie/${movie.id}`} className="link">
         <img
           loading="lazy"
           className="card-img"
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`}
           alt=""
           />
         <div className="movie-desc">
@@ -24,6 +24,7 @@ export default function Card({ movie }) {
         </p>
         </div>
           </Link>
+
       </div>
   );
 }

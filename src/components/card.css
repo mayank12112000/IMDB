@@ -4,7 +4,6 @@
     border: 1px solid grey;
     border-radius: 0.5rem;
     transition: transform 0.3s ease;
-    
 }
 .movie-desc{
     display: none;
@@ -15,9 +14,15 @@
     filter: brightness(1.4);
     transform: scale(1.3);
     cursor: pointer;
+    z-index: 1;
     .movie-desc{
         display: block;
         position: absolute;
         background-color: transparent;
     }
+}
+.fa-bookmark{
+    position: absolute;
+    border-bottom-right-radius: 0.3rem;
+    padding:5px;
 }
