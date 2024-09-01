@@ -66,23 +66,23 @@ export default function MovieDetails() {
           </Link>
           <a target="_blank" href={movie.homepage}>
             <button className="btn btn-warning">
-              Homepage{" "}
+              Offical Site{" "}
               <i className="fa fa-external-link" aria-hidden="true"></i>
             </button>
           </a>
         </div>
+        <div className="row my-3">
         <div className="fs-5 my-3">Production House:</div>
 
-        <div className="row">
 
         {movie && movie.production_companies &&
           movie.production_companies.map((company) => (
               <div key={company.id} className="col-sm">
               {company.logo_path && (
                   <span className="productionCompanyImage">
-                  <img className="movie__productionComapany"
+                  <img className="movie__productionComapany" loading="lazy"
                     src={`https://image.tmdb.org/t/p/original${company.logo_path}`}/>
-                  <span className="mx-3">{company.name}</span>
+                  <span className="mx-3 fs-5">{company.name}</span>
                 </span>
               )}
             </div>
