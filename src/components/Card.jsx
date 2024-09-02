@@ -10,7 +10,7 @@ export default function Card({ movie }) {
   }, []);
   return (
       <div key={movie.id} className="m-2 movie-card">
-        <i class="fa fa-bookmark fs-5" aria-hidden="true"></i>
+        <i className="fa fa-bookmark fs-5" aria-hidden="true"></i>
         <Link to={`/movie/${movie.id}`} className="link">
         <img
           loading="lazy"

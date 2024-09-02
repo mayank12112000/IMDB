@@ -14,3 +14,7 @@
     width: 8rem;
 
 }
+.movie-detail-image{
+    object-fit: cover;
+    width: 100;
+}

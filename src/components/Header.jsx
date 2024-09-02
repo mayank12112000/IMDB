@@ -10,7 +10,14 @@ export default function Header() {
             <Link to="/movies/popular" className="header_link"><span>Popular </span></Link>
             <Link to="/movies/top_rated" className="header_link"><span>Top Rated</span></Link>
             <Link to="/movies/upcoming" className="header_link"><span>Upcoming</span></Link>
-        <i class="fa fa-user" aria-hidden="true"></i>
+            <div className="dropdown ">
+            <i className="fa fa-user" data-bs-toggle="dropdown"  aria-expanded="false" aria-hidden="true"></i>
+            <ul className="dropdown-menu dropdown-menu-light">
+              <Link className='link background-white color-white'><a className="dropdown-item" to="#">Action</a></Link>
+              <Link className='link background-white color-white'><a className="dropdown-item" to="#">Another action</a></Link>
+              <Link className='link background-white color-white'><a className="dropdown-item" to="#">Something else here</a></Link>
+            </ul>
+            </div>
         </div>
     </div>
   )

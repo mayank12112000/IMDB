@@ -21,7 +21,7 @@ export default function MovieDetails() {
         <div className="row">
           <div className="col-sm my-2 d-flex">
             <img
-              className="movie-detail-picture"
+              className="movie-detail-picture movie-detail-image"
               src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
             />
           </div>
