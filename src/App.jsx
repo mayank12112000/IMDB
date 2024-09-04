@@ -8,13 +8,13 @@ import MovieDetails from './pages/MovieDetails'
 
 function App() {
 
+  const [searchKey,setSearchKey] = useState('')
   return (
     <div>
-      <Header/>
+      <Header searchKey={searchKey} setSearchKey={setSearchKey} />
         <Routes>
-          <Route index element={<Homepage/>}/>
+          <Route index element={<Homepage searchKey={searchKey}/>}/>
           <Route path='/movie/:id' element={<MovieDetails/>}/>
-          <Route path='/movies/:type' element={<MovieList/>}/>
           <Route path='/*' element={<h1>error page</h1>}/>
         </Routes>
     </div>

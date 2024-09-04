@@ -20,14 +20,10 @@ export default function MovieDetails() {
       <div className="container">
         <div className="row">
           <div className="col-sm my-2 d-flex">
-            <img
-              className="movie-detail-picture movie-detail-image"
-              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            />
+            <img className="movie-detail-picture movie-detail-image" src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} />
           </div>
           <div className="col-sm my-2">
             <h2 className="">{movie.title} </h2>
-
             {movie.adult ? <p className="text-danger">A rated</p> : <></>}
             <p>{movie.overview}</p>
           </div>

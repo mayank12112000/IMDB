@@ -5,7 +5,7 @@ import "./homepage.css";
 import MovieList from "./MovieList";
 import { Link } from "react-router-dom";
 
-export default function Homepage() {
+export default function Homepage({searchKey}) {
   const apiKey = import.meta.env.VITE_API_KEY;
   const [popularMovies, setPopularMovies] = useState([]);
   const [type,setType] = useState("popular")
@@ -22,7 +22,7 @@ export default function Homepage() {
   }
   return (
     <>
-      <h2 className="p-0 container">Recommended:</h2>
+      <h2 className="ms-4 my-3 p-0 container">Recommended:</h2>
       <Carousel autoPlay={true} showArrows={true} showThumbs={false} renderIndicator={false} infiniteLoop={true}>
         {popularMovies.map((movie) => (
           <div key={movie.id}>
@@ -35,13 +35,13 @@ export default function Homepage() {
           </div>
         ))}
       </Carousel>
-    <div className="mx-2 d-flex justify-content-around align-items-center">
+    {searchKey.length === 0 ? <div className="mx-2 d-flex justify-content-around align-items-center">
       <button onClick={()=>typeChange("popular")} to="/movies/popular" className={`${type==="popular"? "text-danger" : ""} m-0  btn fs-4  header_link`}>Popular </button>
       <button onClick={()=>typeChange("top_rated")} to="/movies/top_rated" className={`${type==="top_rated"? "text-danger" : ""} m-0 btn fs-4 header_link`}>Top Rated</button>
       <button onClick={()=>typeChange("upcoming")} to="/movies/upcoming" className={`${type==="upcoming"?"text-danger" : ""} m-0 btn fs-4 header_link`}>Upcoming</button>
-    </div>
+    </div>:<></>}
             
-      <MovieList type={type}/>
+      <MovieList searchKey={searchKey} type={type}/>
 
       </>
   );
