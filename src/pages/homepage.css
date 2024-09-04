@@ -3,7 +3,7 @@
     position: relative !important;
 }
 .carousel-image{
-    height: 20rem;
+    height: 18rem;
     object-fit: contain;
     width: 100%;
 }
