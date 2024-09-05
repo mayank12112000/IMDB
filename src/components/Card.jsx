@@ -36,7 +36,7 @@ export default function Card({ movie }) {
           />
         <div className="movie-desc">
         <p className="title fs-6">
-            {movie.original_title}
+            {movie.original_title} {`(${movie.release_date.split("-")[0]})`}
         </p>
         </div>
           </Link>
