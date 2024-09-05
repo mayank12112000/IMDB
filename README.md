@@ -38,4 +38,4 @@ A live demo of the application can be found [here](#) (Replace with your live de
 - **Recommendations**: Use a recommendation system to suggest similar movies.
 
 ## Deployed url:
-[Link Text](https://imbd-mayank.netlify.app/)
+<https://imbd-mayank.netlify.app>
