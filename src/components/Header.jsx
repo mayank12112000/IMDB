@@ -14,9 +14,8 @@ export default function Header() {
       <div style={{zIndex:"1000"}} className="profile ">
         <i  className="fa fa-user mx-1 dropdown" data-bs-toggle="dropdown"  aria-expanded="false" aria-hidden="true"></i>
         <ul style={{zIndex:"1000"}} className="dropdown-menu dropdown-menu-dark">
-          <Link to="/profile" className='link background-white color-white'><span className="dropdown-item">Profile</span></Link>
+          <Link target='_blank' to="https://www.linkedin.com/in/mayank-k1211/" className='link background-white color-white'><span className="dropdown-item">Profile</span></Link>
           <Link to="/saved-movies" className='link background-white color-white'><span className="dropdown-item">Saved movies</span></Link>
-          <Link to="/about" className='link background-white color-white'><span className="dropdown-item">About</span></Link>
         </ul>
       </div>
     </>

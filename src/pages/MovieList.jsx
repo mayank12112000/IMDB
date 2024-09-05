@@ -5,7 +5,7 @@ import Card from "../components/Card";
 import "./movieList.css";
 import Filters from "../components/Filters";
 
-export default function MovieList() {
+export default function MovieList({type}) {
   const apiKey = import.meta.env.VITE_API_KEY;
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,6 @@ export default function MovieList() {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [releaseYearRange, setReleaseYearRange] = useState([2000, 2024]);
   const [ratingRange, setRatingRange] = useState([0, 10]);
-  const { type } = useParams();
 
   // Fetch genres when the component mounts
   useEffect(() => {
@@ -56,7 +55,7 @@ export default function MovieList() {
     };
 
     fetchMovies();
-  }, [selectedGenre, releaseYearRange, ratingRange, page, apiKey]);
+  }, [selectedGenre, releaseYearRange,type, ratingRange, page, apiKey]);
 
   const handleScroll = () => {
     if (

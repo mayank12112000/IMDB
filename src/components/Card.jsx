@@ -2,15 +2,31 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./card.css"
 export default function Card({ movie }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+    // Check if the movie is already in favorites when the component loads
+    const favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+    setIsFavorite(favoriteMovies.some(favMovie => favMovie.id === movie.id));
+  }, [movie.id]);
+
+  const handleFavoriteToggle = () => {
+    const favoriteMovies = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+    let updatedFavorites;
+
+    if (isFavorite) {
+      // Remove from favorites if already favorited
+      updatedFavorites = favoriteMovies.filter(favMovie => favMovie.id !== movie.id);
+    } else {
+      // Add to favorites if not already favorited
+      updatedFavorites = [...favoriteMovies, movie];
+    }
+    localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
+    setIsFavorite(!isFavorite);
+  };
   return (
       <div key={movie.id} className="m-2 movie-card">
-        <i className="fa fa-bookmark fs-5" aria-hidden="true"></i>
+        <i onClick={handleFavoriteToggle} className={`fa ${isFavorite?"bookmark-blue":""} fa-bookmark fs-5`} aria-hidden="true"></i>
         <Link to={`/movie/${movie.id}`} className="link">
         <img
           loading="lazy"

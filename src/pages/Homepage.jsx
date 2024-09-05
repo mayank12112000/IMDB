@@ -16,10 +16,7 @@ export default function Homepage() {
       .catch((err) => console.log(err))
       .finally(() => console.log("fetched"));
   }, [apiKey]);
-  const typeChange=(type)=>{
-    setType(type)
-
-  }
+  
   return (
     <>
       <h2 className="ms-4 my-3 p-0 container">Recommended:</h2>
@@ -35,13 +32,7 @@ export default function Homepage() {
           </div>
         ))}
       </Carousel>
-      <div className="d-flex justify-content-around">
-
-      <button onClick={()=>typeChange("popular")} to="/movies/popular" className={`${type==="popular"? "text-danger" : ""} m-0  btn fs-4  header_link`}>Popular </button>
-      <button onClick={()=>typeChange("top_rated")} to="/movies/top_rated" className={`${type==="top_rated"? "text-danger" : ""} m-0 btn fs-4 header_link`}>Top Rated</button>
-      <button onClick={()=>typeChange("upcoming")} to="/movies/upcoming" className={`${type==="upcoming"?"text-danger" : ""} m-0 btn fs-4 header_link`}>Upcoming</button>
-      </div>
-            
+      
       <MovieList type={type}/>
 
       </>
