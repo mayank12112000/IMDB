@@ -2,15 +2,13 @@ import React from 'react'
 import "./header.css"
 import { Link } from 'react-router-dom'
 
-export default function Header({searchKey,setSearchKey}) {
+export default function Header() {
   return (
     <>
   <nav className="p-0 navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div className="container-fluid">
   <Link to="/" className="mx-3 my-3 link imbd-icon"><span  className='fs-3'>IMBD</span></Link>
-  <div className="d-flex search-movie pe-5 ps-5" role="search">
-        <input value={searchKey} onChange={(e)=>setSearchKey(e.target.value)} className="form-control me-2" type="search" placeholder="Search movies" aria-label="Search"/>
-      </div>
+
       </div>
 </nav>
       <div style={{zIndex:"1000"}} className="profile ">
